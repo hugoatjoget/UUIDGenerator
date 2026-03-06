@@ -1,6 +1,6 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+A Joget plugin that provides UUID generation as a form field (**UUID Generator Field**) and a process tool (**UUID Generator Tool**). Supports configurable length, optional dashes, and uppercase output. Includes built-in uniqueness validation by retrying generation if the value already exists in the target form table.
 
 # Getting Help
 
