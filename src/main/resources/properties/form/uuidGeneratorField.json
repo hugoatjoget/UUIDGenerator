@@ -1,0 +1,79 @@
+[{
+    title : '@@form.uuidgeneratorfield.editField@@',
+    properties : [{
+        name : 'id',
+        label : '@@form.uuidgeneratorfield.id@@',
+        type : 'autocomplete',
+        required : 'True',
+        regex_validation : '^[a-zA-Z0-9_]+$',
+        validation_message : '@@form.uuidgeneratorfield.invalidId@@',
+        options_callback : 'FormBuilder.getAllFieldOptions'
+    },
+    {
+        name : 'label',
+        label : '@@form.uuidgeneratorfield.label@@',
+        type : 'textfield',
+        required : 'True',
+        value : '@@org.joget.marketplace.UUIDGeneratorField.pluginLabel@@'
+    },
+    {
+        name : 'UUIDLength',
+        label : '@@form.uuidgeneratorfield.length@@',
+        description : '@@form.uuidgeneratorfield.lengthDesc@@',
+        type : 'textfield',
+        value : '36'
+    },
+    {
+        name : 'includeDashes',
+        label : '@@form.uuidgeneratorfield.includeDashes@@',
+        description : '@@form.uuidgeneratorfield.includeDashesDesc@@',
+        type : 'checkbox',
+        value : 'true',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        name : 'uppercase',
+        label : '@@form.uuidgeneratorfield.uppercase@@',
+        type : 'checkbox',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        name : 'validator',
+        label : '@@form.uuidgeneratorfield.validator@@',
+        type : 'elementselect',
+        options_ajax : '[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.form.model.FormValidator',
+        url : '[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions'
+    }]
+},
+{
+    title : '@@form.uuidgeneratorfield.advancedOptions@@',
+    properties : [{
+        label : '@@form.uuidgeneratorfield.ui@@',
+        type : 'header'
+    },
+    {
+        name : 'hidden',
+        label : '@@form.uuidgeneratorfield.hidden@@',
+        type : 'checkbox',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        label : '@@form.uuidgeneratorfield.workflow@@',
+        type : 'header'
+    },
+    {
+        name : 'workflowVariable',
+        label : '@@form.uuidgeneratorfield.workflowVariable@@',
+        type : 'autocomplete',
+        options_ajax : '[CONTEXT_PATH]/web/json/console/app[APP_PATH]/workflowVariable/options'
+    }]
+}]

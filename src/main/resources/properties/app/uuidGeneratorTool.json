@@ -1,0 +1,62 @@
+[{
+    title : '@@app.uuidgeneratortool.config@@',
+    properties : [{
+        name : 'formDefId',
+        label : '@@app.uuidgeneratortool.form@@',
+        description : '@@app.uuidgeneratortool.form.desc@@',
+        type : 'selectbox',
+        options_ajax : '[CONTEXT_PATH]/web/json/console/app[APP_PATH]/forms/options',
+        required : 'true'
+    },
+    {
+        name : 'fieldId',
+        label : '@@app.uuidgeneratortool.fieldId@@',
+        description : '@@app.uuidgeneratortool.fieldId.desc@@',
+        type : 'selectbox',
+        options_ajax_on_change : 'formDefId',
+        options_ajax : '[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options'
+    },
+    {
+        name : 'recordId',
+        label : '@@app.uuidgeneratortool.recordId@@',
+        description : '@@app.uuidgeneratortool.recordId.desc@@',
+        type : 'textfield'
+    },
+    {
+        name : 'UUIDLength',
+        label : '@@app.uuidgeneratortool.length@@',
+        description : '@@app.uuidgeneratortool.length.desc@@',
+        type : 'textfield',
+        value : '36'
+    },
+    {
+        name : 'includeDashes',
+        label : '@@app.uuidgeneratortool.includeDashes@@',
+        description : '@@app.uuidgeneratortool.includeDashes.desc@@',
+        type : 'checkbox',
+        value : 'true',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        name : 'uppercase',
+        label : '@@app.uuidgeneratortool.uppercase@@',
+        type : 'checkbox',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    }]
+},
+{
+    title : '@@app.uuidgeneratortool.workflowVariables@@',
+    properties : [{
+        name : 'workflowVariable',
+        label : '@@app.uuidgeneratortool.workflowVariable@@',
+        description : '@@app.uuidgeneratortool.workflowVariable.desc@@',
+        type : 'selectbox',
+        options_ajax : '[CONTEXT_PATH]/web/json/console/app[APP_PATH]/workflowVariable/options'
+    }]
+}]
