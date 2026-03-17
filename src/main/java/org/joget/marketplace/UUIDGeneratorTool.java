@@ -16,6 +16,8 @@ import org.joget.workflow.model.service.WorkflowManager;
 
 public class UUIDGeneratorTool extends DefaultApplicationPlugin {
 
+    private static final String MESSAGE_PATH = "message/app/UUIDGeneratorTool";
+
     @Override
     public String getName() {
         return "UUID Generator Tool";
@@ -43,7 +45,7 @@ public class UUIDGeneratorTool extends DefaultApplicationPlugin {
 
     @Override
     public String getPropertyOptions() {
-        return AppUtil.readPluginResource(getClass().getName(), "/properties/app/uuidGeneratorTool.json", null, true, "message/app/UUIDGeneratorTool");
+        return AppUtil.readPluginResource(getClass().getName(), "/properties/app/uuidGeneratorTool.json", null, true, MESSAGE_PATH);
     }
 
     @Override

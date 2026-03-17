@@ -11,9 +11,11 @@ import org.joget.apps.form.model.FormRow;
 import org.joget.apps.form.model.FormRowSet;
 import org.joget.apps.form.service.FormUtil;
 import org.joget.commons.util.LogUtil;
-import org.joget.commons.util.ResourceBundleUtil;
+import org.joget.plugin.base.PluginManager;
 
 public class UUIDGeneratorField extends Element implements FormBuilderPaletteElement {
+
+    private static final String MESSAGE_PATH = "message/form/UUIDGeneratorField";
 
     @Override
     public String renderTemplate(FormData formData, Map dataModel) {
@@ -144,12 +146,14 @@ public class UUIDGeneratorField extends Element implements FormBuilderPaletteEle
 
     @Override
     public String getFormBuilderIcon() {
-        return "<i><span>" + ResourceBundleUtil.getMessage("org.joget.marketplace.UUIDGeneratorField.pluginLabel") + "</span></i>";
+        PluginManager pluginManager = (PluginManager) AppUtil.getApplicationContext().getBean("pluginManager");
+        return "<i><span>" + pluginManager.getMessage("org.joget.marketplace.UUIDGeneratorField.pluginLabelShort", getClass().getName(), MESSAGE_PATH) + "</span></i>";
     }
 
     @Override
     public String getFormBuilderTemplate() {
-        return "<label class='label'>" + ResourceBundleUtil.getMessage("org.joget.marketplace.UUIDGeneratorField.pluginLabel") + "</label><span></span>";
+        PluginManager pluginManager = (PluginManager) AppUtil.getApplicationContext().getBean("pluginManager");
+        return "<label class='label'>" + pluginManager.getMessage("org.joget.marketplace.UUIDGeneratorField.pluginLabel", getClass().getName(), MESSAGE_PATH) + "</label><span></span>";
     }
 
     @Override
@@ -159,6 +163,6 @@ public class UUIDGeneratorField extends Element implements FormBuilderPaletteEle
 
     @Override
     public String getPropertyOptions() {
-        return AppUtil.readPluginResource(getClass().getName(), "/properties/form/uuidGeneratorField.json", null, true, "message/form/UUIDGeneratorField");
+        return AppUtil.readPluginResource(getClass().getName(), "/properties/form/uuidGeneratorField.json", null, true, MESSAGE_PATH);
     }
 }
